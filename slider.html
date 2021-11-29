@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="/grid/1.jpg" alt="">
+
+
+    <script type="text/javascript">
+
+    
+        var imgObj = null;
+        var animate ;
+        function init(){
+           imgObj = document.getElementById('myImage');
+           imgObj.style.position= 'absolute'; 
+           imgObj.style.top = '240px';
+           imgObj.style.left = '-300px';
+           imgObj.style.visibility='hidden';
+           moveRight();
+        } 
+        function moveRight(){
+        if (parseInt(imgObj.style.left)<=10)
+        {
+           imgObj.style.left = parseInt(imgObj.style.left) + 5 + 'px';
+           imgObj.style.visibility='visible';
+           animate = setTimeout(moveRight,20); // call moveRight in 20msec
+           //stopanimate = setTimeout(moveRight,20);
+          }
+        else
+          stop();
+          f();
+        }
+        
+        function stop(){
+           clearTimeout(animate);
+        }
+        window.onload =init;
+        //-->
+        </script>
+        <img id="myImage" src="/grid/10.jpg" style="margin-left:170px;" />
+    
+</body>
+</html>
+
+
+
